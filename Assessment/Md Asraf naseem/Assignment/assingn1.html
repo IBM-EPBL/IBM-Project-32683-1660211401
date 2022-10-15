@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Registration form</title>
+<script type="text/javascript">
+    function display(){
+        var s=document.getElementById("name").value
+        var q=document.getElementById("qualification").value
+        var d=document.getElementById("age").value
+        var e=document.getElementById("email").value
+        document.getElementById("information").innerHTML="Name:"+s+"<br>"+"Qualification:"+q+"<br>"+"Age:"+d+"<br>"+"Email:"+e
+        
+    }
+    </script>
+</head>
+
+<body>
+<h1>Registration</h1>
+<form id="information" method="/Assignemnt-02.html" method="post"><br>
+<table>
+<tr>
+    <td><p>Enter name:
+    <input id="name" type="text" name="name" placeholder="Name"></p></td></tr>
+	<tr>
+	<td><p>Qualification:
+    <input id="qualification" type="text" name="qualification" placeholder="Qualification"></p></td></tr>
+	<tr>
+	<td><p>Age:
+    <input id="age" type="text" name="age" placeholder="Age"></p></td></tr>
+	<tr>
+	<td><p>Email:
+    <input  id="email" type="email" name="email" placeholder="Email"></p></td></tr>
+   <tr><td><input type="submit" onClick="display()" value="Submit"></td></tr>
+	</table>
+</form>
+</body>
+</html> 
