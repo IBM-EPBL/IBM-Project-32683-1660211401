@@ -1,0 +1,28 @@
+.parent{
+display:flex;
+height:100%;
+width:100%;
+}
+*{
+    background-color:grey;
+}
+.image1{
+    height:20%;
+    width:20%;
+}
+.image2{
+    height:20%;
+    width:20%;
+}
+.image3{
+    height:20%;
+    width:20%;
+}
+.image4{
+    height:20%;
+    width:20%;
+}
+.image5{
+    height:20%;
+    width:20%;
+}

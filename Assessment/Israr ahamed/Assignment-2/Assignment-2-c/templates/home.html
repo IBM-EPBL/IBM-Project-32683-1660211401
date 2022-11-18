@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Home</title>
+<style>
+.get{
+text-align: center;
+}
+.information{
+text-align: center;
+}
+.button{
+text-align: center;
+}
+</style>
+<script>
+function send()
+{
+window.open("http://localhost:5000/pdf ","_self")
+}
+</script>
+</head>
+
+<body>
+{{user}}
+<h1 class="information">Home</h1>
+<div class="get">
+<p>Enter the File</p><br>
+<form action="http://localhost:5000/home" method="POST" enctype="multipart/form-data">
+<input type="file" name="file"><br>
+<input type="submit" name="Submit">
+</form>
+</div>
+<br>
+<div class="button">
+<input type="button" name="button" value="view" type="button" onclick="send()">
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Resume</title>
+<script type="text/javascript">
+    function display(){
+        var s=document.getElementById("name").value
+        var q=document.getElementById("qualification").value
+        var d=document.getElementById("age").value
+        var e=document.getElementById("email").value
+        document.getElementById("information").innerHTML="Name:"+s+"<br>"+"Qualification:"+q+"<br>"+"Age:"+d+"<br>"+"Email:"+e
+        
+    }
+    </script>
+</head>
+
+<body>
+<h1>Information</h1>
+<form id="information" method="/Assignemnt-02.html" method="post"><br>
+    <input id="name" type="text" name="name" placeholder="Name"><br>
+    <input id="qualification" type="text" name="qualification" placeholder="Qualification"><br>
+    <input id="age" type="text" name="age" placeholder="Age"><br>
+    <input  id="email" type="email" name="email" placeholder="Email"><br>
+    <input type="submit" onClick="display()" value="Send">
+</form>
+</body>
+</html> 
