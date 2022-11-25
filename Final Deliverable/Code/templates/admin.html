@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+        <link href="{{ url_for('static',filename='css/custom.css') }}" rel="stylesheet" type="text/css" />
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<title>Admin Dashboard</title>
+<style>
+.model{
+text-align:center;
+}
+.container-color{
+            background-color:#102ABD;
+        }  
+</style>
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-dark container-color navbar-expand-sm box-shadow">
+          <a href="/" class="navbar-brand d-flex align-items-center">
+              <strong><i class="fa fa-shopping-bag"></i> Sample Clothing Store</strong>
+          </a>
+        </nav>
+    </header><br />
+<p class="model">Admin Dashboard</p>
+<pre>Admin Page</pre>
+<script>
+function website()
+{
+i=1;
+window.open("/admin",target="_self");
+}
+</script>
+<button type="button" onClick="website()">Open</button>
+{orders}
+</body>
+</html>

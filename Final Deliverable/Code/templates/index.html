@@ -19,7 +19,7 @@ Legendry Fashion- Home
       {% for i in range(shirtsLen) %}
           <div class="col-sm">
               <div class="card text-center">
-                  <div class="card-body">
+                  <div class="card-body" style="background-color:skyblue;">
                     <form action="/buy/" methods="POST">
                         <h5 class="card-title">{{shirts[i]["typeClothes"].capitalize()}}</h5>
                       <img src="/static/img/{{shirts[i]["image"]}}" class="shirt" alt="" />
@@ -52,5 +52,18 @@ Legendry Fashion- Home
       </div>
     </div>
   </main>
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "d2ed07f7-698a-45c9-b5db-7bf72ce4cc21", // The ID of this integration.
+      region: "jp-tok", // The region your integration is hosted in.
+      serviceInstanceID: "feecf2e0-112e-47c0-b0a0-b3d3c389b056", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
 
 {% endblock %}

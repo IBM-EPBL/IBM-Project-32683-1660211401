@@ -16,6 +16,11 @@
 
         <title>{% block title %}{% endblock %}</title>
     </head>
+    <style>
+      .container-color{
+        background-color:#102ABD;
+      }
+    </style>
     <body>
   <!-- Modal -->
   <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -100,7 +105,12 @@
     </div>
   </div>
   <header>
-    <nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-sm box-shadow">
+    <nav class="navbar fixed-top navbar-dark container-color navbar-expand-sm box-shadow">
+      <style>
+        a:hover{
+          color:blue;
+        }
+      </style>
       <a href="/" class="navbar-brand d-flex align-items-center">
           <strong><i class="fa  fa-cart-plus">Trendy Clothing Store</i></strong>
       </a>
@@ -109,7 +119,7 @@
         <li class="nav-item"><a href="/logout/" class="nav-link">Logout</a></li>
         <li class="nav-item"><a href="/history/" class="nav-link">You Bought</a></li>
       {% else %}
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto container-color">
         <li class="nav-item"><a href="/new/" class="nav-link">Register</a></li>
         <li class="nav-item"><a href="/login/" class="nav-link">Login</a></li>
 
@@ -131,7 +141,7 @@
         </li>
       </ul>
       <div>
-        <button class="navbar-toggler" style="display:inline" type="button" data-toggle="modal" data-target="#modalCenter">
+        <button class="navbar-toggler screen-color" style="display:inline" type="button" data-toggle="modal" data-target="#modalCenter">
           <span class="glyphicon glyphicon-shopping-cart" data-toggle="modal" data-target="">
             <i class="fas fa-shopping-cart"></i>
             <span class="counter">No. of Items: {{ totItems }}</span>

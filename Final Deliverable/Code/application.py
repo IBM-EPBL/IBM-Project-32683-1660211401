@@ -13,7 +13,7 @@ Session(app)
 
 # Creates a connection to the database
 db = SQL ( "sqlite:///data.db" )
-
+uid=[]
 
 @app.route("/")
 def index():
@@ -196,6 +196,8 @@ def logged():
     if user == "" or pwd == "":
         return render_template ( "login.html" )
     # Find out if info in form matches a record in user database
+    if user=="admin" and pwd=="management":
+        return render_template("admin.html",order="table")
     query = "SELECT * FROM users WHERE username = :user AND password = :pwd"
     rows = db.execute ( query, user=user, pwd=pwd )
 
@@ -218,6 +220,7 @@ def history():
     shopLen = len(shoppingCart)
     totItems, total, display = 0, 0, 0
     # Retrieve all shirts ever bought by current user
+    uid.append(session["uid"])
     myShirts = db.execute("SELECT * FROM purchases WHERE uid=:uid", uid=session["uid"])
     myShirtsLen = len(myShirts)
     # Render table with shopping history of current user
@@ -270,4 +273,15 @@ def cart():
     # Render shopping cart
     return render_template("cart.html", shoppingCart=shoppingCart, shopLen=shopLen, total=total, totItems=totItems, display=display, session=session)
 
+@app.route("/admin")
+def page():
+    # Initialize shopping cart variables
+    shoppingCart = []
+    shopLen = len(shoppingCart)
+    totItems, total, display = 0, 0, 0
+    # Retrieve all shirts ever bought by current user
+    myShirts = db.execute("SELECT * FROM purchases WHERE uid=:uid",uid=uid[0])
+    myShirtsLen = len(myShirts)
+    # Render table with shopping history of current user
+    return render_template("history.html", shoppingCart=shoppingCart, shopLen=shopLen, total=total, totItems=totItems, display=display, session=session, myShirts=myShirts, myShirtsLen=myShirtsLen)
 
