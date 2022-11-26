@@ -285,3 +285,12 @@ def page():
     # Render table with shopping history of current user
     return render_template("history.html", shoppingCart=shoppingCart, shopLen=shopLen, total=total, totItems=totItems, display=display, session=session, myShirts=myShirts, myShirtsLen=myShirtsLen)
 
+@app.route("/addproduct",methods=["POST"])
+def post():
+    name=request.form["product_name"]
+    product_size=request.form["stocks_value"]
+    track=request.form["product_amount"]
+    name=str(name)
+    product_size=str(product_size)
+    track=str(track)
+    return render_template("admin.html")+"Name:"+" "+name+"<br>"+"Product Size:"+" "+product_size+"<br>"+"User Amount:"+track+"<br>"+"Product is Added"+"</div>"

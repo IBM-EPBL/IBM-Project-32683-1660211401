@@ -41,5 +41,12 @@ window.open("/admin",target="_self");
 </script>
 <button type="button" onClick="website()">Open</button>
 {orders}
+<form action="http://localhost:5000/addproduct" method="post">
+    Enter the Product Name:<input type="text" placeholder="Product Name" name="product_name">
+    <br>Enter the Number of Stocks:<input type="text" placeholder="Stocks Number" name="stocks_value">
+    <input type="file" name="file" value="file">
+    <br>Enter the Price:<input type="text" placeholder="Enter Amount" name="product_amount">
+    <br><input type="submit">Submit</input>
+</form>
 </body>
 </html>
